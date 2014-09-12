@@ -13,6 +13,8 @@ This plugin allows you to replace any sidebar/widget area in your theme without 
 == Description ==
 For a quick video demo please view the [vimeo screencast](https://vimeo.com/titaniumthemes/easy-custom-sidebars).
 
+The documentation for this plugin can be found [here](http://titaniumthemes.com/easy-custom-sidebars/).
+
 [Follow us on twitter!](https://twitter.com/titaniumthemes)
 
 If you have found this plugin useful please [donate here](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=28M8NWPHVQNYU)
@@ -100,6 +102,8 @@ Nothing to see here...
 
 == Frequently Asked Questions ==
 For a quick video demo please view the [vimeo screencast](https://vimeo.com/titaniumthemes/easy-custom-sidebars).
+
+The documentation for this plugin can be found [here](http://titaniumthemes.com/easy-custom-sidebars/).
 
 == Credits and Donation ==
 
