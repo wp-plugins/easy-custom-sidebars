@@ -12,8 +12,8 @@
  * @package     Easy_Custom_Sidebars
  * @author      Sunny Johal - Titanium Themes <support@titaniumthemes.com>
  * @license     GPL-2.0+
- * @copyright   Copyright (c) 2014, Titanium Themes
- * @version     1.0
+ * @copyright   Copyright (c) 2015, Titanium Themes
+ * @version     1.0.1
  * 
  */
 if ( ! class_exists( 'Easy_Custom_Sidebars' ) ) :
@@ -51,8 +51,8 @@ if ( ! class_exists( 'Easy_Custom_Sidebars' ) ) :
 		 * Initialize the class and register all
 		 * actions and filters.
 		 *
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		function __construct() {
@@ -67,8 +67,8 @@ if ( ! class_exists( 'Easy_Custom_Sidebars' ) ) :
 		 * 
 		 * @return    object    A single instance of this class.
 		 *
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public static function get_instance() {
@@ -86,8 +86,8 @@ if ( ! class_exists( 'Easy_Custom_Sidebars' ) ) :
 		 *
 		 * @return    Plugin slug variable.
 		 *
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public function get_plugin_slug() {
@@ -99,8 +99,8 @@ if ( ! class_exists( 'Easy_Custom_Sidebars' ) ) :
 		 *
 		 * Add any custom actions in this function.
 		 * 
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public function register_actions() {
@@ -111,8 +111,8 @@ if ( ! class_exists( 'Easy_Custom_Sidebars' ) ) :
 		 *
 		 * Add any custom filters in this function.
 		 * 
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public function register_filters() {
@@ -121,8 +121,8 @@ if ( ! class_exists( 'Easy_Custom_Sidebars' ) ) :
 		/**
 		 * Load Plugin Text Domain
 		 *
-		 * @since 1.0
-		 * @since 1.0
+		 * @since 1.0.1
+		 * @since 1.0.1
 		 * 
 		 */
 		public static function load_text_domain() {
@@ -136,8 +136,8 @@ if ( ! class_exists( 'Easy_Custom_Sidebars' ) ) :
 		 * the css directory location. Returns the path without
 		 * the trailing slash.
 		 * 
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public static function get_css_url() {
@@ -151,8 +151,8 @@ if ( ! class_exists( 'Easy_Custom_Sidebars' ) ) :
 		 * the css directory location. Returns the path without
 		 * the trailing slash.
 		 * 
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public static function get_css_path() {
@@ -166,8 +166,8 @@ if ( ! class_exists( 'Easy_Custom_Sidebars' ) ) :
 		 * the js directory location. Returns the path without
 		 * the trailing slash.
 		 * 
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public static function get_js_url() {
@@ -181,8 +181,8 @@ if ( ! class_exists( 'Easy_Custom_Sidebars' ) ) :
 		 * the js directory location. Returns the path without
 		 * the trailing slash.
 		 * 
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public static function get_js_path() {
@@ -196,8 +196,8 @@ if ( ! class_exists( 'Easy_Custom_Sidebars' ) ) :
 		 * the js directory location. Returns the url without
 		 * the trailing slash.
 		 * 
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public static function get_images_url() {
@@ -211,8 +211,8 @@ if ( ! class_exists( 'Easy_Custom_Sidebars' ) ) :
 		 * the js directory location. Returns the path without
 		 * the trailing slash.
 		 * 
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public static function get_images_path() {
@@ -226,8 +226,8 @@ if ( ! class_exists( 'Easy_Custom_Sidebars' ) ) :
 		 * the includes directory location. Returns the path without
 		 * the trailing slash.
 		 * 
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public static function get_includes_url() {
@@ -241,8 +241,8 @@ if ( ! class_exists( 'Easy_Custom_Sidebars' ) ) :
 		 * the includes directory location. Returns the path without
 		 * the trailing slash.
 		 * 
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public static function get_includes_path() {
@@ -256,8 +256,8 @@ if ( ! class_exists( 'Easy_Custom_Sidebars' ) ) :
 		 * the views directory location. Returns the path without
 		 * the trailing slash.
 		 * 
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public static function get_views_url() {
@@ -271,8 +271,8 @@ if ( ! class_exists( 'Easy_Custom_Sidebars' ) ) :
 		 * the views directory location. Returns the path without
 		 * the trailing slash.
 		 * 
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public static function get_views_path() {
@@ -289,8 +289,8 @@ if ( ! class_exists( 'Easy_Custom_Sidebars' ) ) :
 		 *                                       WPMU is disabled or plugin is
 		 *                                       activated on an individual blog.
 		 *
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public static function activate( $network_wide ) {
@@ -328,8 +328,8 @@ if ( ! class_exists( 'Easy_Custom_Sidebars' ) ) :
 		 *                                       WPMU is disabled or plugin is
 		 *                                       deactivated on an individual blog.
 		 *
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public static function deactivate( $network_wide ) {
@@ -366,8 +366,8 @@ if ( ! class_exists( 'Easy_Custom_Sidebars' ) ) :
 		 *
 		 * @param    int    $blog_id    ID of the new blog.
 		 *
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public function activate_new_site( $blog_id ) {
@@ -391,8 +391,8 @@ if ( ! class_exists( 'Easy_Custom_Sidebars' ) ) :
 		 *
 		 * @return   array|false    The blog ids, false if no matches.
 		 *
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		private static function get_blog_ids() {
@@ -413,8 +413,8 @@ if ( ! class_exists( 'Easy_Custom_Sidebars' ) ) :
 		 * Anything in this function is fired for each blog 
 		 * when the plugin is activated.
 		 *
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		private static function single_activate() {
@@ -426,8 +426,8 @@ if ( ! class_exists( 'Easy_Custom_Sidebars' ) ) :
 		 * Anything in this function is fired for each blog 
 		 * when the plugin is deactivated.
 		 *
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		private static function single_deactivate() {

@@ -9,8 +9,8 @@
  * @package     Easy_Custom_Sidebars
  * @author      Sunny Johal - Titanium Themes <support@titaniumthemes.com>
  * @license     GPL-2.0+
- * @copyright   Copyright (c) 2014, Titanium Themes
- * @version     1.0
+ * @copyright   Copyright (c) 2015, Titanium Themes
+ * @version     1.0.1
  * 
  */
 
@@ -24,7 +24,7 @@
  * @link http://codex.wordpress.org/Function_Reference/current_theme_supports		current_theme_supports()
  * @link http://codex.wordpress.org/Function_Reference/wp_die 				    	wp_die()
  *
- * @since 1.0
+ * @since 1.0.1
  * @version  1.0
  * 
  */

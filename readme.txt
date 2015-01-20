@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: custom sidebars, unlimited sidebars, replace sidebars, dynamic sidebar, create sidebars, sidebar replacement, sidebar manager, widget area manager, widget area replacement, unlimited sidebar generator, custom widget areas, wordpress multiple sidebars, sidebar plugin for wordpress, wordpress sidebar plugin,
 Requires at least: 4.1
 Tested up to: 4.1
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -93,6 +93,8 @@ e.g.
 10. Quickly manage all of your custom sidebars on the manage sidebar replacements screen.
 
 == Changelog ==
+= 1.0.1 =
+* Updated translation method.
 
 = 1.0 =
 * First plugin release.

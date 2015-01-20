@@ -9,8 +9,8 @@
  * @package     Easy_Custom_Sidebars
  * @author      Sunny Johal - Titanium Themes <support@titaniumthemes.com>
  * @license     GPL-2.0+
- * @copyright   Copyright (c) 2014, Titanium Themes
- * @version     1.0
+ * @copyright   Copyright (c) 2015, Titanium Themes
+ * @version     1.0.1
  * 
  */
 ?>

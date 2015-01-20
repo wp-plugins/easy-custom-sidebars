@@ -10,8 +10,8 @@
  * @package     Easy_Custom_Sidebars
  * @author      Sunny Johal - Titanium Themes <support@titaniumthemes.com>
  * @license     GPL-2.0+
- * @copyright   Copyright (c) 2014, Titanium Themes
- * @version     1.0
+ * @copyright   Copyright (c) 2015, Titanium Themes
+ * @version     1.0.1
  * 
  */
 if ( ! class_exists( 'ECS_Frontend' ) ) :
@@ -82,8 +82,8 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * Initialize the class and register all
 		 * actions and filters.
 		 *
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		function __construct() {
@@ -98,8 +98,8 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * 
 		 * @return    object    A single instance of this class.
 		 *
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public static function get_instance() {
@@ -119,8 +119,8 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * 
 		 * @link http://codex.wordpress.org/Function_Reference/add_action		add_action()
 		 * 
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public function register_actions() {
@@ -134,8 +134,8 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 *
 		 * @link http://codex.wordpress.org/Function_Reference/add_filter		add_filter()
 		 * 
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public function register_filters() {
@@ -163,8 +163,8 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * @param 	string 	$sidebar_id  - Sidebar ID.
 		 * @return  boolean $has_widgets 
 		 *
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public function remove_sidebar_via_dynamic_sidebar( $has_widgets, $sidebar_id ) {
@@ -203,8 +203,8 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * @param 	string 		$sidebar_id - Sidebar ID.
 		 * @return 	boolean 	$is_active
 		 *
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public function remove_sidebar_via_is_active_sidebar( $is_active, $sidebar_id ) {
@@ -242,8 +242,8 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * @param 	string 	$sidebar_id  - Sidebar ID.
 		 * @return  boolean $has_widgets 
 		 *
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public function restore_sidebar_via_dynamic_sidebar( $has_widgets, $sidebar_id ) {
@@ -274,8 +274,8 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * @param 	string 		$sidebar_id - Sidebar ID.
 		 * @return 	boolean 	$is_active
 		 *
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public function restore_sidebar_via_is_active_sidebar( $is_active, $sidebar_id ) {
@@ -301,8 +301,8 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 *
 		 * @uses global $wp_customize
 		 * 
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public function prepare_sidebars_for_customizer() {
@@ -338,8 +338,8 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * @param  array $sidebars_widgets - Original Sidebar Widgets
 		 * @return array $sidebars_widgets - Updated Sidebar Widgets
 		 *
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public function swap_widgets( $sidebars_widgets ) {
@@ -443,7 +443,7 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * @return 	string $replacement_id 	- The replacement id if it exists or false if no replacement is found.
 		 *
 		 * @since  1.0
-		 * @version 1.0
+		 * @version 1.0.1
 		 * 
 		 */
 		public function get_widget_area_replacement( $index ) {

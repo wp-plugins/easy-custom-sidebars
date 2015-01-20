@@ -10,8 +10,8 @@
  * @package     Easy_Custom_Sidebars
  * @author      Sunny Johal - Titanium Themes <support@titaniumthemes.com>
  * @license     GPL-2.0+
- * @copyright   Copyright (c) 2014, Titanium Themes
- * @version     1.0
+ * @copyright   Copyright (c) 2015, Titanium Themes
+ * @version     1.0.1
  * 
  * @uses Walker_Nav_Menu
  * 
@@ -125,7 +125,7 @@ class ECS_Walker_Edit extends Walker_Nav_Menu {
 		if ( ! empty( $item->_invalid ) ) {
 			$classes[] = 'menu-item-invalid';
 			/* translators: %s: title of menu item which is invalid */
-			$title = sprintf( __( '%s (Invalid)' ), $item->title );
+			$title = sprintf( __( '%s (Invalid)', 'easy-custom-sidebars' ), $item->title );
 		} elseif ( isset( $item->post_status ) && 'draft' == $item->post_status ) {
 
 			if ( isset( $args->pending ) ) {
@@ -156,7 +156,7 @@ class ECS_Walker_Edit extends Walker_Nav_Menu {
 					<span class="item-title"><?php echo esc_html( $title ); ?></span>
 					<span class="item-controls">
 						<span class="item-type"><?php echo esc_html( $item->type_label ); ?></span>
-						<a class="item-edit" id="edit-<?php echo $item_id; ?>" title="<?php esc_attr_e('Edit Sidebar Item', 'easy-custom-sidebars'); ?>" href="#">
+						<a class="item-edit" id="edit-<?php echo $item_id; ?>" title="<?php esc_attr_e( 'Edit Sidebar Item', 'easy-custom-sidebars' ); ?>" href="#">
 							<?php _e( 'Edit Sidebar Item', 'easy-custom-sidebars' ); ?>
 						</a>
 					</span>
@@ -168,7 +168,7 @@ class ECS_Walker_Edit extends Walker_Nav_Menu {
 				<div class="menu-item-actions description-wide submitbox">
 					<?php if( 'custom' != $item->type && $original_title !== false ) : ?>
 						<p class="link-to-original">
-							<?php printf( __('Original: %s'), '<a href="' . esc_attr( $item->url ) . '">' . esc_html( $original_title ) . '</a>' ); ?>
+							<?php printf( __( 'Original: %s', 'easy-custom-sidebars' ), '<a href="' . esc_attr( $item->url ) . '">' . esc_html( $original_title ) . '</a>' ); ?>
 						</p>
 					<?php endif; ?>
 					<a class="item-delete submitdelete deletion" id="delete-<?php echo $item_id; ?>" href="<?php
@@ -183,7 +183,7 @@ class ECS_Walker_Edit extends Walker_Nav_Menu {
 						),
 						'delete-menu_item_' . $item_id
 					); ?>"><?php _e( 'Remove', 'easy-custom-sidebars' ); ?></a> <span class="meta-sep"> | </span> <a class="item-cancel submitcancel" id="cancel-<?php echo $item_id; ?>" href="<?php	echo esc_url( add_query_arg( array('edit-menu-item' => $item_id, 'cancel' => time()), remove_query_arg( $removed_args, admin_url( 'themes.php' ) ) ) );
-						?>#menu-item-settings-<?php echo $item_id; ?>"><?php _e('Cancel'); ?></a>
+						?>#menu-item-settings-<?php echo $item_id; ?>"><?php _e( 'Cancel', 'easy-custom-sidebars' ); ?></a>
 				</div>
 				
 				<input class="menu-item-data-db-id"     type="hidden" name="menu-item-db-id[<?php esc_html_e( $item_id ); ?>]"        value="<?php esc_html_e( $item_id ); ?>" />

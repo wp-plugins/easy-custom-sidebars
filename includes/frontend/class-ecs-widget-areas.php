@@ -10,8 +10,8 @@
  * @package     Easy_Custom_Sidebars
  * @author      Sunny Johal - Titanium Themes <support@titaniumthemes.com>
  * @license     GPL-2.0+
- * @copyright   Copyright (c) 2014, Titanium Themes
- * @version     1.0
+ * @copyright   Copyright (c) 2015, Titanium Themes
+ * @version     1.0.1
  * 
  */
 if ( ! class_exists( 'ECS_Widget_Areas' ) ) :
@@ -48,8 +48,8 @@ if ( ! class_exists( 'ECS_Widget_Areas' ) ) :
 		 * Initialize the class and register all
 		 * actions and filters.
 		 *
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		function __construct() {
@@ -64,8 +64,8 @@ if ( ! class_exists( 'ECS_Widget_Areas' ) ) :
 		 * 
 		 * @return    object    A single instance of this class.
 		 *
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public static function get_instance() {
@@ -83,8 +83,8 @@ if ( ! class_exists( 'ECS_Widget_Areas' ) ) :
 		 *
 		 * @return    Plugin slug variable.
 		 *
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public function get_plugin_slug() {
@@ -96,8 +96,8 @@ if ( ! class_exists( 'ECS_Widget_Areas' ) ) :
 		 *
 		 * Add any custom actions in this function.
 		 * 
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public function register_actions() {
@@ -109,8 +109,8 @@ if ( ! class_exists( 'ECS_Widget_Areas' ) ) :
 		 *
 		 * Add any custom filters in this function.
 		 * 
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public function register_filters() {
@@ -135,7 +135,7 @@ if ( ! class_exists( 'ECS_Widget_Areas' ) ) :
 		 * @uses global $wp_registered_sidebars
 		 * 
 		 * @since  1.0
-		 * @version 1.0
+		 * @version 1.0.1
 		 * 
 		 */
 		public function register_widget_areas() {
@@ -195,7 +195,7 @@ if ( ! class_exists( 'ECS_Widget_Areas' ) ) :
 		 * @uses global $wp_registered_sidebars
 		 * @return array $wp_registered_sidebars
 		 *
-		 * @since 1.0
+		 * @since 1.0.1
 		 * @version  1.0
 		 * 
 		 */
@@ -214,8 +214,8 @@ if ( ! class_exists( 'ECS_Widget_Areas' ) ) :
 		 * @uses   get_all_registered_widget_areas() - Defined in this class
 		 * @return array $default_widgets_areas - An array of default sidebar objects
 		 *
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public function get_default_widget_areas() {
@@ -239,8 +239,8 @@ if ( ! class_exists( 'ECS_Widget_Areas' ) ) :
 		 * @uses   get_all_registered_widget_areas() - Defined in this class
 		 * @return array $custom_widget_areas - An array of custom widget areas
 		 *
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public function get_custom_widget_areas() {
@@ -269,7 +269,7 @@ if ( ! class_exists( 'ECS_Widget_Areas' ) ) :
 		 * 
 		 * @return array $array An array of sidebar objects to sort
 		 *
-		 * @since 1.0
+		 * @since 1.0.1
 		 * @version  1.0
 		 * 
 		 */
@@ -298,7 +298,7 @@ if ( ! class_exists( 'ECS_Widget_Areas' ) ) :
 		 * @uses   get_custom_widget_areas() - Defined in this class
 		 * @return array $widget_area - The widget area if it exists, false otherwise.
 		 *
-		 * @since 1.0
+		 * @since 1.0.1
 		 * @version  1.0
 		 * 
 		 */
@@ -329,8 +329,8 @@ if ( ! class_exists( 'ECS_Widget_Areas' ) ) :
 		 * @param  $id - ID of the widget area to unregister
 		 * @return boolean	true if successfully deleted, false otherwise
 		 *
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		public function unregister_custom_widget_area( $id ) {

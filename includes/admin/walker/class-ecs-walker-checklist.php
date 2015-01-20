@@ -10,8 +10,8 @@
  * @package     Easy_Custom_Sidebars
  * @author      Sunny Johal - Titanium Themes <support@titaniumthemes.com>
  * @license     GPL-2.0+
- * @copyright   Copyright (c) 2014, Titanium Themes
- * @version     1.0
+ * @copyright   Copyright (c) 2015, Titanium Themes
+ * @version     1.0.1
  * 
  * @uses Walker_Nav_Menu
  * 
@@ -34,8 +34,8 @@ if ( class_exists( 'Walker_Nav_Menu' ) ) {
 		 * @param  array   $args   [description]
 		 * @return [type]          [description]
 		 *
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		function start_lvl( &$output, $depth = 0, $args = array() ) {
@@ -51,8 +51,8 @@ if ( class_exists( 'Walker_Nav_Menu' ) ) {
 		 * @param  array   $args   [description]
 		 * @return [type]          [description]
 		 *
-		 * @since 1.0
-		 * @version 1.0
+		 * @since 1.0.1
+		 * @version 1.0.1
 		 * 
 		 */
 		function end_lvl( &$output, $depth = 0, $args = array() ) {
@@ -94,7 +94,7 @@ if ( class_exists( 'Walker_Nav_Menu' ) ) {
 			$output .= '<input type="checkbox" class="menu-item-checkbox';
 			
 			if ( property_exists( $item, 'front_or_home' ) && $item->front_or_home ) {
-				$title   = sprintf( _x( 'Home: %s', 'nav menu front page title' ), $item->post_title );
+				$title   = sprintf( _x( 'Home: %s', 'nav menu front page title', 'easy-custom-sidebars' ), $item->post_title );
 				$output .= ' add-to-top';
 			}
 			

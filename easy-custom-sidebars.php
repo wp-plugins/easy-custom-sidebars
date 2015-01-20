@@ -3,7 +3,7 @@
  * Plugin Name: Easy Custom Sidebars
  * Plugin URI: http://www.titaniumthemes.com/wordpress-sidebar-plugin
  * Description: A simple and easy way to add custom sidebars/widget areas to your WordPress theme.
- * Version: 1.0
+ * Version: 1.0.1
  * Author: Titanium Themes
  * Author URI: http://www.titaniumthemes.com
  * Text Domain: easy-custom-sidebars
@@ -22,8 +22,8 @@
  * @package     Easy_Custom_Sidebars
  * @author      Sunny Johal - Titanium Themes <support@titaniumthemes.com>
  * @license     GPL-2.0+
- * @copyright   Copyright (c) 2014, Titanium Themes
- * @version     1.0
+ * @copyright   Copyright (c) 2015, Titanium Themes
+ * @version     1.0.1
  * 
  */
 
@@ -40,8 +40,8 @@ if ( ! defined( 'WPINC' ) ) {
  * Codex functions used:
  * {@link http://codex.wordpress.org/Function_Reference/plugin_dir_path} 	plugin_dir_path()
  *
- * @since 1.0
- * @version 1.0
+ * @since 1.0.1
+ * @version 1.0.1
  * 
  */
 require_once( plugin_dir_path( __FILE__ ) . 'class-easy-custom-sidebars.php' );
@@ -65,14 +65,17 @@ require_once( plugin_dir_path( __FILE__ ) . 'includes/admin/class-ecs-ajax.php' 
  * Codex functions used: 
  * {@link http://codex.wordpress.org/Function_Reference/add_action} 	add_action()
  *
- * @since 1.0
- * @version 1.0
+ * @since 1.0.1
+ * @version 1.0.1
  * 
  */
 add_action( 'plugins_loaded', array( 'Easy_Custom_Sidebars', 'get_instance' ) );
 add_action( 'plugins_loaded', array( 'ECS_Posttype', 'get_instance' ) );
 add_action( 'plugins_loaded', array( 'ECS_Widget_Areas', 'get_instance' ) );
 add_action( 'plugins_loaded', array( 'ECS_Frontend', 'get_instance' ) );
+
+// Load plugin text domain
+add_action( 'plugins_loaded', array( 'Easy_Custom_Sidebars', 'load_text_domain' ) );
 
 if ( is_admin() ) {
 	add_action( 'plugins_loaded', array( 'ECS_Admin', 'get_instance' ) );
@@ -91,8 +94,8 @@ if ( is_admin() ) {
  * {@link http://codex.wordpress.org/Function_Reference/register_activation_hook} 		register_activation_hook()
  * {@link http://codex.wordpress.org/Function_Reference/register_deactivation_hook} 	register_deactivation_hook()
  * 
- * @since 1.0
- * @version 1.0
+ * @since 1.0.1
+ * @version 1.0.1
  * 
  */
 register_activation_hook( __FILE__, array( 'Easy_Custom_Sidebars', 'activate' ) );

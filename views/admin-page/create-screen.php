@@ -9,8 +9,8 @@
  * @package     Easy_Custom_Sidebars
  * @author      Sunny Johal - Titanium Themes <support@titaniumthemes.com>
  * @license     GPL-2.0+
- * @copyright   Copyright (c) 2014, Titanium Themes
- * @version     1.0
+ * @copyright   Copyright (c) 2015, Titanium Themes
+ * @version     1.0.1
  * 
  */
 
@@ -21,8 +21,8 @@
  * later in a data attribute. This URL will have the 
  * rest of the query variables appended to it via AJAX.
  *
- * @since 1.0
- * @version 1.0
+ * @since 1.0.1
+ * @version 1.0.1
  * 
  */
 $edit_redirect_link = esc_url( 
@@ -41,8 +41,8 @@ $edit_redirect_link = esc_url(
  * Generate a unique edit URL for each custom
  * sidebar.
  *
- * @since 1.0
- * @version 1.0
+ * @since 1.0.1
+ * @version 1.0.1
  * 
  */
 $delete_link = $this->admin_url;
