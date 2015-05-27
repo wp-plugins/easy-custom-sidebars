@@ -19,7 +19,7 @@
  * @author      Sunny Johal - Titanium Themes <support@titaniumthemes.com>
  * @license     GPL-2.0+
  * @copyright   Copyright (c) 2015, Titanium Themes
- * @version     1.0.1
+ * @version     1.0.2
  * 
  */
 if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
@@ -88,7 +88,7 @@ if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
 		 * actions and filters.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		function __construct() {
@@ -109,7 +109,7 @@ if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
 		 * @return    object    A single instance of this class.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public static function get_instance() {
@@ -149,7 +149,7 @@ if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
 		 * Add any custom actions in this function.
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function register_actions() {
@@ -161,7 +161,7 @@ if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
 		 * Add any custom filters in this function.
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function register_filters() {
@@ -176,7 +176,7 @@ if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
 		 * @return boolean true
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function is_edit_screen() {
@@ -193,7 +193,7 @@ if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
 		 * @return boolean true
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function is_create_screen() {
@@ -209,7 +209,7 @@ if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
 		 * @return boolean true
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function is_manage_screen() {
@@ -225,7 +225,7 @@ if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
 		 * @return boolean true
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function is_advanced_screen() {
@@ -239,7 +239,7 @@ if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
 		 * admin page.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function render() {
@@ -282,7 +282,7 @@ if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
 		 * screen the user is currently on.
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function set_screen_state() {
@@ -293,7 +293,7 @@ if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
 
 			// Determine Screen
 			if ( isset( $_GET['screen'] ) ) {
-				switch ( $_GET['screen'] ) {
+				switch ( esc_attr( $_GET['screen'] ) ) {
 
 					case 'edit':
 						$this->is_edit_screen = true;
@@ -311,7 +311,7 @@ if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
 
 			if ( ! $this->is_manage_screen && ! $this->is_advanced_screen ) {
 				// Determine Screen via $_GET['action']
-				$action = isset( $_GET['action'] ) ? $_GET['action'] : false;
+				$action = isset( $_GET['action'] ) ? esc_attr( $_GET['action'] ) : false;
 
 				if ( 'edit' == $action ) {
 					$this->is_edit_screen   = true;
@@ -364,7 +364,7 @@ if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
 		 * admin settings page.
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function set_sidebar_instances() {
@@ -401,18 +401,18 @@ if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
 			}
 
 			// Determine screen via $_GET['action']
-			$action = isset( $_GET['action'] ) ? $_GET['action'] : false;
+			$action = isset( $_GET['action'] ) ? esc_attr( $_GET['action'] ) : false;
 
 			// Update the current sidebar id if it is passed in the url
 			if ( isset( $_GET['sidebar'] ) ) {
-				$this->current_sidebar_id = $_GET['sidebar'];
+				$this->current_sidebar_id = esc_attr( $_GET['sidebar'] );
 			}
 
 			/**
 			 * The sidebar id of the current sidebar being edited
 			 * Note: this is a string representation of '0', not an integer.
 			 */ 
-			$this->sidebar_selected_id = isset( $_GET['sidebar'] ) ? $_GET['sidebar'] : '0';
+			$this->sidebar_selected_id = isset( $_GET['sidebar'] ) ? esc_attr( $_GET['sidebar'] ) : '0';
 
 			// Attempts to get a sidebar if it exists
 			$this->sidebar_instance = $data->get_sidebar_instance( $this->sidebar_selected_id );
@@ -447,7 +447,7 @@ if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
 		 * @return [type] [description]
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function do_accordion_sections() {
@@ -502,7 +502,7 @@ if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
 		 * create screen.
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function get_create_screen() {
@@ -517,7 +517,7 @@ if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
 		 * all of the current custom sidebars.
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function get_manage_screen() {
@@ -533,7 +533,7 @@ if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
 		 * originated from the user.
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function get_nonces() {
@@ -547,7 +547,7 @@ if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
 		 * that are available for this custom sidebar.
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function get_slider_options() {
@@ -563,7 +563,7 @@ if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
 		 * to modify on the edit screen.
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function get_manage_control_form() {
@@ -577,7 +577,7 @@ if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
 		 * edit screen.
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function get_edit_screen() {
@@ -597,7 +597,7 @@ if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
 		 * Gets the page container openining tag markup.
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function get_page_start() {
@@ -610,7 +610,7 @@ if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
 		 * Gets the page container closing tag markup.
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function get_page_end() {
@@ -624,7 +624,7 @@ if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
 		 * settings page.
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function get_page_tabs() {
@@ -641,7 +641,7 @@ if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
 		 * @return [type] [description]
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function get_deleted_dialog() {
@@ -656,7 +656,7 @@ if ( ! class_exists( 'ECS_Admin_Controller' ) ) :
 		 * updated.
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function get_updated_dialog() {

@@ -10,7 +10,7 @@
  * @author      Sunny Johal - Titanium Themes <support@titaniumthemes.com>
  * @license     GPL-2.0+
  * @copyright   Copyright (c) 2015, Titanium Themes
- * @version     1.0.1
+ * @version     1.0.2
  * 
  */
 if ( ! class_exists( 'ECS_Admin' ) ) :
@@ -40,7 +40,7 @@ if ( ! class_exists( 'ECS_Admin' ) ) :
 		 * actions and filters.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		function __construct() {
@@ -56,7 +56,7 @@ if ( ! class_exists( 'ECS_Admin' ) ) :
 		 * @return    object    A single instance of this class.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public static function get_instance() {
@@ -76,7 +76,7 @@ if ( ! class_exists( 'ECS_Admin' ) ) :
 		 * 
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function register_actions() {
@@ -95,7 +95,7 @@ if ( ! class_exists( 'ECS_Admin' ) ) :
 		 * Add any custom filters in this function.
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function register_filters() {
@@ -112,7 +112,7 @@ if ( ! class_exists( 'ECS_Admin' ) ) :
 		 * @return    null    Return early if no settings page is registered.
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function enqueue_admin_styles() {
@@ -147,7 +147,7 @@ if ( ! class_exists( 'ECS_Admin' ) ) :
 		 * @return    null    Return early if no settings page is registered.
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function enqueue_admin_scripts() {
@@ -218,7 +218,7 @@ if ( ! class_exists( 'ECS_Admin' ) ) :
 		 * @return array $l10n - Array of strings to be used as a js translation object
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function getL10n() {
@@ -246,7 +246,7 @@ if ( ! class_exists( 'ECS_Admin' ) ) :
 		 * elements globally.
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function admin_head_styles() {
@@ -266,7 +266,7 @@ if ( ! class_exists( 'ECS_Admin' ) ) :
 		 * @link http://codex.wordpress.org/Roles_and_Capabilities 	Roles and Capabilities
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function add_plugin_admin_menu() {
@@ -322,7 +322,7 @@ if ( ! class_exists( 'ECS_Admin' ) ) :
 		 *     -  ecs_add_screen_options
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function add_screen_option() {
@@ -351,7 +351,7 @@ if ( ! class_exists( 'ECS_Admin' ) ) :
 		 * @link    http://codex.wordpress.org/Function_Reference/add_help_tab            add_help_tab()
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function add_help_tabs() {
@@ -401,7 +401,7 @@ if ( ! class_exists( 'ECS_Admin' ) ) :
 		 * @return string $content 	- Tab Content
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function get_overview_tab_content() {
@@ -425,7 +425,7 @@ if ( ! class_exists( 'ECS_Admin' ) ) :
 		 * @uses global $wp_meta_boxes
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */	
 		public function setup_metaboxes() {
@@ -454,7 +454,7 @@ if ( ! class_exists( 'ECS_Admin' ) ) :
 		 * @link 	http://codex.wordpress.org/Function_Reference/add_meta_box 		add_meta_box()
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function setup_post_type_meta_boxes() {
@@ -510,7 +510,7 @@ if ( ! class_exists( 'ECS_Admin' ) ) :
 		 * @param string $post_type The post type object.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function render_post_type_meta_box( $object, $post_type ) {
@@ -793,7 +793,7 @@ if ( ! class_exists( 'ECS_Admin' ) ) :
 		 * @link 	http://codex.wordpress.org/Function_Reference/add_meta_box 		add_meta_box()
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function setup_category_posts_boxes() {
@@ -825,7 +825,7 @@ if ( ! class_exists( 'ECS_Admin' ) ) :
 		 * @link 	http://codex.wordpress.org/Function_Reference/is_taxonomy_hierarchical			is_taxonomy_hierarchical()
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function render_category_post_meta_box() {
@@ -1075,7 +1075,7 @@ if ( ! class_exists( 'ECS_Admin' ) ) :
 		 * @uses 	render_taxonomy_meta_box() 	- Defined in this class
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function setup_taxonomy_meta_boxes() {
@@ -1130,7 +1130,7 @@ if ( ! class_exists( 'ECS_Admin' ) ) :
 		 * @param string $taxonomy The taxonomy object.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function render_taxonomy_meta_box( $object, $taxonomy ) {
@@ -1344,7 +1344,7 @@ if ( ! class_exists( 'ECS_Admin' ) ) :
 		 * @link 	http://codex.wordpress.org/Function_Reference/add_meta_box 		add_meta_box()
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function setup_author_meta_box() {
@@ -1378,7 +1378,7 @@ if ( ! class_exists( 'ECS_Admin' ) ) :
 		 * @param string $taxonomy The taxonomy object.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function render_author_meta_box() {
@@ -1590,7 +1590,7 @@ if ( ! class_exists( 'ECS_Admin' ) ) :
 		 * @uses 	master_sidebar_item_post_type_meta_box() 	defined in includes/theme-sidebar-admin-page-functions.php
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function setup_template_meta_box() {
@@ -1616,7 +1616,7 @@ if ( ! class_exists( 'ECS_Admin' ) ) :
 		 * @link 	http://codex.wordpress.org/Function_Reference/get_page_templates 	get_page_templates()
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function render_template_meta_box() {
@@ -1762,7 +1762,7 @@ if ( ! class_exists( 'ECS_Admin' ) ) :
 		 * @uses master_sidebar_author_quick_search()
 		 * 
 		 * @since  1.0
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function get_sidebar_attachment_markup( $sidebar_id ) {
@@ -2298,7 +2298,7 @@ if ( ! class_exists( 'ECS_Admin' ) ) :
 		 * @uses 	class Master_Walker_Sidebar_Checklist 	defined in includes/classes/class-master-walker-sidebar-edit.php
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function author_quick_search( $request = array() ) {

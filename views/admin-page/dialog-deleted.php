@@ -9,13 +9,13 @@
  * @author      Sunny Johal - Titanium Themes <support@titaniumthemes.com>
  * @license     GPL-2.0+
  * @copyright   Copyright (c) 2015, Titanium Themes
- * @version     1.0.1
+ * @version     1.0.2
  * 
  */
 ?>
 <?php if ( isset( $_GET['dialog'] ) ) : ?>
 	<?php if ( $_GET['dialog'] == 'deleted' ) : ?>
-		<?php $deleted_sidebar_name = isset( $_GET['name'] ) ? $_GET['name'] : __( 'Sidebar', 'easy-custom-sidebars' ); ?>
+		<?php $deleted_sidebar_name = isset( $_GET['name'] ) ? esc_attr( $_GET['name'] ) : __( 'Sidebar', 'easy-custom-sidebars' ); ?>
 		<div class="updated below-h2" id="delete_message">
 			<p><?php printf( __( '%1$s has been deleted.', 'easy-custom-sidebars' ), "<strong>{$deleted_sidebar_name}</strong>" ) ?></p>
 		</div>

@@ -9,7 +9,7 @@
  * @author      Sunny Johal - Titanium Themes <support@titaniumthemes.com>
  * @license     GPL-2.0+
  * @copyright   Copyright (c) 2015, Titanium Themes
- * @version     1.0.1
+ * @version     1.0.2
  * 
  */
 if ( ! class_exists( 'ECS_Ajax' ) ) :
@@ -39,7 +39,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 		 * actions and filters.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		function __construct() {
@@ -55,7 +55,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 		 * @return    object    A single instance of this class.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public static function get_instance() {
@@ -74,7 +74,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 		 * Add any custom actions in this function.
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function register_actions() {
@@ -94,7 +94,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 		 * Add any custom filters in this function.
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function register_filters() {
@@ -117,7 +117,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 		 * @uses  class CPS_Walker_Sidebar_Edit
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function add_sidebar_item() {
@@ -489,7 +489,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 		 * @link http://codex.wordpress.org/Function_Reference/add_action 				add_action()
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function create_sidebar_instance() {
@@ -507,7 +507,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 
 			// Get sidebar name
 			if( isset( $_POST['sidebar_name'] ) ) {
-				$sidebar_name =  $_POST['sidebar_name'];
+				$sidebar_name =  esc_attr( $_POST['sidebar_name'] );
 			} else {
 				$sidebar_name = __( 'Custom Sidebar', 'easy-custom-sidebars' );
 			}
@@ -550,7 +550,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 		 * @uses ECS_Posttype->update_sidebar_instance()
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */		
 		public function update_sidebar_instance() {
@@ -567,10 +567,10 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 			do_action( 'ecs-trigger-transient-refresh' );
 
 			// Get sidebar attributes	
-			$sidebar_id      = isset( $_POST[ 'sidebarId' ] )     ? (string) $_POST[ 'sidebarId' ]     : (string) '0';
-			$replacement_id  = isset( $_POST[ 'replacementId' ] ) ? (string) $_POST[ 'replacementId' ] : (string) '0';
-			$sidebar_name    = isset( $_POST[ 'sidebarName' ] )   ? (string) $_POST[ 'sidebarName' ]   : __( 'Custom Sidebar', 'easy-custom-sidebar' );
-			$description     = isset( $_POST[ 'description' ] )   ? (string) $_POST[ 'description' ]   : '';
+			$sidebar_id      = isset( $_POST[ 'sidebarId' ] )     ? (string) esc_attr( $_POST[ 'sidebarId' ] )     : (string) '0';
+			$replacement_id  = isset( $_POST[ 'replacementId' ] ) ? (string) esc_attr( $_POST[ 'replacementId' ] ) : (string) '0';
+			$sidebar_name    = isset( $_POST[ 'sidebarName' ] )   ? (string) esc_attr( $_POST[ 'sidebarName' ] )   : __( 'Custom Sidebar', 'easy-custom-sidebar' );
+			$description     = isset( $_POST[ 'description' ] )   ? (string) esc_attr( $_POST[ 'description' ] )   : '';
 			$attachment_data = array();
 
 			// Check for sidebar attachements
@@ -627,7 +627,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 		 * @link http://codex.wordpress.org/Function_Reference/add_action 				add_action()
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */	
 		public function delete_sidebar_instance() {
@@ -646,7 +646,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 			if ( isset( $_POST['sidebarId'] ) ) {
 				// Refresh transients
 				do_action( 'ecs-trigger-transient-refresh' );
-				$data->delete_sidebar_instance( $_POST['sidebarId'] );
+				$data->delete_sidebar_instance( esc_attr( $_POST['sidebarId'] ) );
 			}
 
 			// Kill function and return to client
@@ -665,7 +665,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 		 * @link http://codex.wordpress.org/Function_Reference/add_action 				add_action()
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */	
 		public function delete_all_sidebar_instances() {
@@ -705,7 +705,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 		 * @uses master_get_sidebar_instance() defined in includes/theme-sidebar-functions.php
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function edit_sidebar_replacement() {
@@ -725,8 +725,8 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 				$data = ECS_Posttype::get_instance();
 
 				// Change sidebar replacement if the sidebar exists
-				$sidebar_instance = $data->get_sidebar_instance( $_POST['sidebarId'] );
-				$replacement_id   = $_POST['replacementId'];
+				$sidebar_instance = $data->get_sidebar_instance( esc_attr( $_POST['sidebarId'] ) );
+				$replacement_id   = esc_attr( $_POST['replacementId'] );
 
 				if ( $sidebar_instance ) {
 					update_post_meta( $sidebar_instance->ID, 'sidebar_replacement_id', $replacement_id );
@@ -751,7 +751,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 		 * @uses ECS_Admin::quick_search()
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function quick_search() {
@@ -790,7 +790,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 		 * @uses taxonomy_meta_box_output()
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * 
 		 */
 		public function get_metabox() {
@@ -808,7 +808,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 
 			// Determine the type of content requested
 			if ( isset( $_POST['item-type'] ) ) {
-				switch ( $_POST['item-type'] ) {
+				switch ( esc_attr( $_POST['item-type'] ) ) {
 
 					// Handle Posttype Case
 					case 'post_type':	
