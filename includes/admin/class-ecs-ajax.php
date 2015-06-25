@@ -9,7 +9,7 @@
  * @author      Sunny Johal - Titanium Themes <support@titaniumthemes.com>
  * @license     GPL-2.0+
  * @copyright   Copyright (c) 2015, Titanium Themes
- * @version     1.0.2
+ * @version     1.0.3
  * 
  */
 if ( ! class_exists( 'ECS_Ajax' ) ) :
@@ -39,7 +39,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 		 * actions and filters.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		function __construct() {
@@ -55,7 +55,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 		 * @return    object    A single instance of this class.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public static function get_instance() {
@@ -74,7 +74,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 		 * Add any custom actions in this function.
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public function register_actions() {
@@ -94,7 +94,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 		 * Add any custom filters in this function.
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public function register_filters() {
@@ -117,7 +117,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 		 * @uses  class CPS_Walker_Sidebar_Edit
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public function add_sidebar_item() {
@@ -489,7 +489,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 		 * @link http://codex.wordpress.org/Function_Reference/add_action 				add_action()
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public function create_sidebar_instance() {
@@ -550,7 +550,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 		 * @uses ECS_Posttype->update_sidebar_instance()
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */		
 		public function update_sidebar_instance() {
@@ -627,7 +627,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 		 * @link http://codex.wordpress.org/Function_Reference/add_action 				add_action()
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */	
 		public function delete_sidebar_instance() {
@@ -665,7 +665,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 		 * @link http://codex.wordpress.org/Function_Reference/add_action 				add_action()
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */	
 		public function delete_all_sidebar_instances() {
@@ -705,7 +705,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 		 * @uses master_get_sidebar_instance() defined in includes/theme-sidebar-functions.php
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public function edit_sidebar_replacement() {
@@ -751,7 +751,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 		 * @uses ECS_Admin::quick_search()
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public function quick_search() {
@@ -790,7 +790,7 @@ if ( ! class_exists( 'ECS_Ajax' ) ) :
 		 * @uses taxonomy_meta_box_output()
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public function get_metabox() {

@@ -11,7 +11,7 @@
  * @author      Sunny Johal - Titanium Themes <support@titaniumthemes.com>
  * @license     GPL-2.0+
  * @copyright   Copyright (c) 2015, Titanium Themes
- * @version     1.0.2
+ * @version     1.0.3
  * 
  */
 if ( ! class_exists( 'ECS_Frontend' ) ) :
@@ -83,7 +83,7 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * actions and filters.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		function __construct() {
@@ -99,7 +99,7 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * @return    object    A single instance of this class.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public static function get_instance() {
@@ -120,7 +120,7 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * @link http://codex.wordpress.org/Function_Reference/add_action		add_action()
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public function register_actions() {
@@ -135,7 +135,7 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * @link http://codex.wordpress.org/Function_Reference/add_filter		add_filter()
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public function register_filters() {
@@ -164,7 +164,7 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * @return  boolean $has_widgets 
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public function remove_sidebar_via_dynamic_sidebar( $has_widgets, $sidebar_id ) {
@@ -204,7 +204,7 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * @return 	boolean 	$is_active
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public function remove_sidebar_via_is_active_sidebar( $is_active, $sidebar_id ) {
@@ -243,7 +243,7 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * @return  boolean $has_widgets 
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public function restore_sidebar_via_dynamic_sidebar( $has_widgets, $sidebar_id ) {
@@ -275,7 +275,7 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * @return 	boolean 	$is_active
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public function restore_sidebar_via_is_active_sidebar( $is_active, $sidebar_id ) {
@@ -302,7 +302,7 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * @uses global $wp_customize
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public function prepare_sidebars_for_customizer() {
@@ -339,7 +339,7 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * @return array $sidebars_widgets - Updated Sidebar Widgets
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public function swap_widgets( $sidebars_widgets ) {
@@ -443,7 +443,7 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * @return 	string $replacement_id 	- The replacement id if it exists or false if no replacement is found.
 		 *
 		 * @since  1.0
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public function get_widget_area_replacement( $index ) {

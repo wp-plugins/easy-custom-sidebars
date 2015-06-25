@@ -11,7 +11,7 @@
  * @author      Sunny Johal - Titanium Themes <support@titaniumthemes.com>
  * @license     GPL-2.0+
  * @copyright   Copyright (c) 2015, Titanium Themes
- * @version     1.0.2
+ * @version     1.0.3
  * 
  */
 if ( ! class_exists( 'ECS_Posttype' ) ) :
@@ -49,7 +49,7 @@ if ( ! class_exists( 'ECS_Posttype' ) ) :
 		 * actions and filters.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		function __construct() {
@@ -65,7 +65,7 @@ if ( ! class_exists( 'ECS_Posttype' ) ) :
 		 * @return    object    A single instance of this class.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public static function get_instance() {
@@ -84,7 +84,7 @@ if ( ! class_exists( 'ECS_Posttype' ) ) :
 		 * @return    Plugin slug variable.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public function get_plugin_slug() {
@@ -97,7 +97,7 @@ if ( ! class_exists( 'ECS_Posttype' ) ) :
 		 * Add any custom actions in this function.
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public function register_actions() {
@@ -110,7 +110,7 @@ if ( ! class_exists( 'ECS_Posttype' ) ) :
 		 * Add any custom filters in this function.
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public function register_filters() {
@@ -132,7 +132,7 @@ if ( ! class_exists( 'ECS_Posttype' ) ) :
 		 * @link 	http://codex.wordpress.org/Function_Reference/register_post_type 	register_post_type()
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public function register_custom_post_type() {
@@ -167,7 +167,7 @@ if ( ! class_exists( 'ECS_Posttype' ) ) :
 		 * @return post object if found otherwise false
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public function get_sidebar_instance( $sidebar_id ) {
@@ -201,7 +201,7 @@ if ( ! class_exists( 'ECS_Posttype' ) ) :
 		 *         boolean if there are no posts.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public function get_all_sidebar_instances( $orderby = 'title', $order = 'ASC' ) {
@@ -239,7 +239,7 @@ if ( ! class_exists( 'ECS_Posttype' ) ) :
 		 * @return boolean - true if there is another sidebar instance that has $sidebar_name
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public function sidebar_name_exists( $sidebar_name, $sidebar_exclusion_id ) {
@@ -297,7 +297,7 @@ if ( ! class_exists( 'ECS_Posttype' ) ) :
 		 * @return $post  The ID of the post if the post is successfully added to the database or 0 on failure.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 *
 		 */
 		public function add_sidebar_instance( $post_title, $replacement_id, $description = '', $sidebar_attachment_data = array() ) {
@@ -404,7 +404,7 @@ if ( ! class_exists( 'ECS_Posttype' ) ) :
 		 * @return string $post_id The post ID of the updated/created post.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public function update_sidebar_instance( $sidebar_id, $replacement_id, $post_title, $description = '', $sidebar_attachment_data = array() ) {
@@ -503,7 +503,7 @@ if ( ! class_exists( 'ECS_Posttype' ) ) :
 		 * @return boolean $deleted       True if the sidebar has been located and deleted, false otherwise.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public function delete_sidebar_instance( $sidebar_id ) {
@@ -548,7 +548,7 @@ if ( ! class_exists( 'ECS_Posttype' ) ) :
 		 * @link http://codex.wordpress.org/Function_Reference/wp_reset_postdata    wp_reset_postdata()
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * 
 		 */
 		public function delete_all_sidebar_instances() {
