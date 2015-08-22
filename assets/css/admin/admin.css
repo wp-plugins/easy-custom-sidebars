@@ -7,7 +7,7 @@
  * @author      Sunny Johal - Titanium Themes <support@titaniumthemes.com>
  * @license     GPL-2.0+
  * @copyright   Copyright (c) 2015, Titanium Themes
- * @version     1.0.3
+ * @version     1.0.4
  * 
  */
 
@@ -35,7 +35,7 @@ textarea, input, select {
  * The following styles are used for the Manage
  * Sidebar Replacements Screen.
  *
- * @version 1.0.3
+ * @version 1.0.4
  * 
  */
 
@@ -60,6 +60,11 @@ span.sidebar-delete-link a {
     border: 1px solid #ddd;
     -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
     box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+
+.spinner {
+    display: none;
+    visibility: visible;
 }
 
 #sidebar-management .spinner {
@@ -111,7 +116,7 @@ td.default-widget-areas {
  * The following styles are used for the Manage
  * Sidebar Replacements Screen.
  *
- * @version 1.0.3
+ * @version 1.0.4
  * 
  */
 
@@ -465,7 +470,7 @@ dl.menu-item-bar {
  * @author      Sunny Johal - Titanium Themes <support@titaniumthemes.com>
  * @license     GPL-2.0+
  * @copyright   Copyright (c) 2015, Titanium Themes
- * @version     1.0.3
+ * @version     1.0.4
  * 
  */
 @media screen and (max-width: 782px) {
@@ -483,7 +488,7 @@ dl.menu-item-bar {
      * The following styles are used for the Manage
      * Sidebar Replacements Screen.
      *
-     * @version 1.0.3
+     * @version 1.0.4
      * 
      */
 

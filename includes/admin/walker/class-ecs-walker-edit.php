@@ -11,7 +11,7 @@
  * @author      Sunny Johal - Titanium Themes <support@titaniumthemes.com>
  * @license     GPL-2.0+
  * @copyright   Copyright (c) 2015, Titanium Themes
- * @version     1.0.3
+ * @version     1.0.4
  * 
  * @uses Walker_Nav_Menu
  * 
@@ -100,6 +100,7 @@ class ECS_Walker_Edit extends Walker_Nav_Menu {
 			// Author archive page
 			case 'author_archive':
 				$original_title   = $item->title;
+				$item->url = get_author_posts_url( $item->ID );
 				break;
 
 			// WordPress templates

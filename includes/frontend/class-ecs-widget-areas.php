@@ -11,7 +11,7 @@
  * @author      Sunny Johal - Titanium Themes <support@titaniumthemes.com>
  * @license     GPL-2.0+
  * @copyright   Copyright (c) 2015, Titanium Themes
- * @version     1.0.3
+ * @version     1.0.4
  * 
  */
 if ( ! class_exists( 'ECS_Widget_Areas' ) ) :
@@ -49,7 +49,7 @@ if ( ! class_exists( 'ECS_Widget_Areas' ) ) :
 		 * actions and filters.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.3
+		 * @version 1.0.4
 		 * 
 		 */
 		function __construct() {
@@ -65,7 +65,7 @@ if ( ! class_exists( 'ECS_Widget_Areas' ) ) :
 		 * @return    object    A single instance of this class.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.3
+		 * @version 1.0.4
 		 * 
 		 */
 		public static function get_instance() {
@@ -84,7 +84,7 @@ if ( ! class_exists( 'ECS_Widget_Areas' ) ) :
 		 * @return    Plugin slug variable.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.3
+		 * @version 1.0.4
 		 * 
 		 */
 		public function get_plugin_slug() {
@@ -97,7 +97,7 @@ if ( ! class_exists( 'ECS_Widget_Areas' ) ) :
 		 * Add any custom actions in this function.
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.3
+		 * @version 1.0.4
 		 * 
 		 */
 		public function register_actions() {
@@ -110,7 +110,7 @@ if ( ! class_exists( 'ECS_Widget_Areas' ) ) :
 		 * Add any custom filters in this function.
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.3
+		 * @version 1.0.4
 		 * 
 		 */
 		public function register_filters() {
@@ -124,18 +124,10 @@ if ( ! class_exists( 'ECS_Widget_Areas' ) ) :
 		 * This function has been updated to compensate for themes
 		 * that are not coded correctly.
 		 *
-		 * @link http://codex.wordpress.org/Function_Reference/WP_Query             WP_Query()
-		 * @link http://codex.wordpress.org/Function_Reference/get_post_meta        get_post_meta()
-		 * @link http://codex.wordpress.org/Function_Reference/get_the_ID           get_the_ID()
-		 * @link http://codex.wordpress.org/Function_Reference/get_the_title        get_the_title()
-		 * @link http://codex.wordpress.org/Function_Reference/the_post             the_post()
-		 * @link http://codex.wordpress.org/Function_Reference/register_sidebar     register_sidebar()
-		 * @link http://codex.wordpress.org/Function_Reference/wp_reset_postdata    wp_reset_postdata()
-		 *
 		 * @uses global $wp_registered_sidebars
 		 * 
 		 * @since  1.0
-		 * @version 1.0.3
+		 * @version 1.0.4
 		 * 
 		 */
 		public function register_widget_areas() {
@@ -215,7 +207,7 @@ if ( ! class_exists( 'ECS_Widget_Areas' ) ) :
 		 * @return array $default_widgets_areas - An array of default sidebar objects
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.3
+		 * @version 1.0.4
 		 * 
 		 */
 		public function get_default_widget_areas() {
@@ -240,7 +232,7 @@ if ( ! class_exists( 'ECS_Widget_Areas' ) ) :
 		 * @return array $custom_widget_areas - An array of custom widget areas
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.3
+		 * @version 1.0.4
 		 * 
 		 */
 		public function get_custom_widget_areas() {
@@ -330,7 +322,7 @@ if ( ! class_exists( 'ECS_Widget_Areas' ) ) :
 		 * @return boolean	true if successfully deleted, false otherwise
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.3
+		 * @version 1.0.4
 		 * 
 		 */
 		public function unregister_custom_widget_area( $id ) {

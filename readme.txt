@@ -2,9 +2,9 @@
 Contributors: sunny_johal, amit_kayasth
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=28M8NWPHVQNYU
 Tags: custom sidebars, unlimited sidebars, replace sidebars, dynamic sidebar, create sidebars, sidebar replacement, sidebar manager, widget area manager, widget area replacement, unlimited sidebar generator, custom widget areas, wordpress multiple sidebars, sidebar plugin for wordpress, wordpress sidebar plugin,
-Requires at least: 4.2
-Tested up to: 4.2.2
-Stable tag: 1.0.3
+Requires at least: 4.3
+Tested up to: 4.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -93,6 +93,13 @@ e.g.
 10. Quickly manage all of your custom sidebars on the manage sidebar replacements screen.
 
 == Changelog ==
+= 1.0.4 - Feature Update and Bug Fix =
+* New Feature: Can add sidebars for author archive pages.
+* The sidebar now persists on empty taxonomy pages.
+* The sidebar now persists when there are no posts in search results.
+* Fixed issue whereby taxonomy names with ampersands weren't being added to the sidebar (had to manually esc_html for get_term_by function).
+* Removed dependancy for global $post object and use the get_queried_object() function when looking for a replacement.
+
 = 1.0.3 - Admin Capability Check =
 * Prevents an error from being triggered in admin when a non-admin user doesn't have the required capability to use the plugin.
 

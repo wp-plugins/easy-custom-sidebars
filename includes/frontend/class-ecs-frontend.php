@@ -11,7 +11,7 @@
  * @author      Sunny Johal - Titanium Themes <support@titaniumthemes.com>
  * @license     GPL-2.0+
  * @copyright   Copyright (c) 2015, Titanium Themes
- * @version     1.0.3
+ * @version     1.0.4
  * 
  */
 if ( ! class_exists( 'ECS_Frontend' ) ) :
@@ -83,7 +83,7 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * actions and filters.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.3
+		 * @version 1.0.4
 		 * 
 		 */
 		function __construct() {
@@ -99,7 +99,7 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * @return    object    A single instance of this class.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.3
+		 * @version 1.0.4
 		 * 
 		 */
 		public static function get_instance() {
@@ -120,7 +120,7 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * @link http://codex.wordpress.org/Function_Reference/add_action		add_action()
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.3
+		 * @version 1.0.4
 		 * 
 		 */
 		public function register_actions() {
@@ -135,15 +135,15 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * @link http://codex.wordpress.org/Function_Reference/add_filter		add_filter()
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.3
+		 * @version 1.0.4
 		 * 
 		 */
 		public function register_filters() {
 			add_filter( 'sidebars_widgets', array( $this, 'swap_widgets' ) );
-			add_filter( 'dynamic_sidebar_has_widgets', array( $this, 'remove_sidebar_via_dynamic_sidebar' ), 5, 2 );
 			add_filter( 'is_active_sidebar', array( $this, 'remove_sidebar_via_is_active_sidebar' ), 5, 2 );
-			add_filter( 'dynamic_sidebar_has_widgets', array( $this, 'restore_sidebar_via_dynamic_sidebar' ), 11, 2 );
 			add_filter( 'is_active_sidebar', array( $this, 'restore_sidebar_via_is_active_sidebar' ), 11, 2 );
+			add_filter( 'dynamic_sidebar_has_widgets', array( $this, 'remove_sidebar_via_dynamic_sidebar' ), 5, 2 );	
+			add_filter( 'dynamic_sidebar_has_widgets', array( $this, 'restore_sidebar_via_dynamic_sidebar' ), 11, 2 );
 		}
 
 		/**
@@ -164,7 +164,7 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * @return  boolean $has_widgets 
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.3
+		 * @version 1.0.4
 		 * 
 		 */
 		public function remove_sidebar_via_dynamic_sidebar( $has_widgets, $sidebar_id ) {
@@ -204,7 +204,7 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * @return 	boolean 	$is_active
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.3
+		 * @version 1.0.4
 		 * 
 		 */
 		public function remove_sidebar_via_is_active_sidebar( $is_active, $sidebar_id ) {
@@ -243,13 +243,15 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * @return  boolean $has_widgets 
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.3
+		 * @version 1.0.4
 		 * 
 		 */
 		public function restore_sidebar_via_dynamic_sidebar( $has_widgets, $sidebar_id ) {
 			global $wp_customize;
 
-			// Attempt to restore if the customizer is running and the variable has been modified
+			// Attempt to restore if the customizer 
+			// is running and the variable has been 
+			// modified.
 			if ( isset( $wp_customize ) && array_key_exists( $sidebar_id, $this->dynamic_sidebar_data ) ) {
 				$GLOBALS['wp_registered_sidebars'][ $sidebar_id ] = $this->dynamic_sidebar_data[ $sidebar_id ]['data'];
 				return $this->dynamic_sidebar_data[ $sidebar_id ]['has_widgets'];
@@ -275,13 +277,15 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * @return 	boolean 	$is_active
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.3
+		 * @version 1.0.4
 		 * 
 		 */
 		public function restore_sidebar_via_is_active_sidebar( $is_active, $sidebar_id ) {
 			global $wp_customize;
 
-			// Attempt to restore if the customizer is running and the variable has been modified
+			// Attempt to restore if the customizer 
+			// is running and the variable has been 
+			// modified.
 			if ( isset( $wp_customize ) && array_key_exists( $sidebar_id, $this->active_sidebar_data ) ) {
 				$GLOBALS['wp_registered_sidebars'][ $sidebar_id ] = $this->active_sidebar_data[ $sidebar_id ]['data'];
 				return $this->active_sidebar_data[ $sidebar_id ]['is_active'];
@@ -302,7 +306,7 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * @uses global $wp_customize
 		 * 
 		 * @since 1.0.1
-		 * @version 1.0.3
+		 * @version 1.0.4
 		 * 
 		 */
 		public function prepare_sidebars_for_customizer() {
@@ -339,21 +343,35 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		 * @return array $sidebars_widgets - Updated Sidebar Widgets
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.3
+		 * @version 1.0.4
 		 * 
 		 */
 		public function swap_widgets( $sidebars_widgets ) {
 			global $wp_customize;
 
-			// Return if we are in the admin area and not in the customizer
+			// Return if we are in the admin area 
+			// and not in the customizer.
 			if ( is_admin() && ! isset( $wp_customize ) ) {
 				return $sidebars_widgets;
 			}
 
+			// Get global $vars
 			global $post;
 			
 			$widget_area_data     = ECS_Widget_Areas::get_instance();
 			$default_widget_areas = $widget_area_data->get_default_widget_areas();
+
+			/**
+			 * Return Widgets
+			 *
+			 * Returns the sidebar widgets if the 
+			 * 'wp_head' action hasn't been fired
+			 * yet.
+			 * 
+			 */
+			if ( ! did_action( 'wp_head' ) ) {
+				return $sidebars_widgets;
+			}
 
 			/**
 			 * Track Replacements:
@@ -365,7 +383,7 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 			 * performance.
 			 * 
 			 */
-			if ( ! $this->widget_areas_processed && $post ) {
+			if ( ! $this->widget_areas_processed ) {
 				foreach ( $default_widget_areas as $widget_area ) {
 					$index          = $widget_area['id'];
 					$replacement_id = $this->get_widget_area_replacement( $index );
@@ -387,7 +405,7 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 			 * sidebar into the original sidebar.
 			 * 
 			 */
-			if ( $this->widget_areas_processed && $post ) {
+			if ( $this->widget_areas_processed ) {
 				foreach ( $default_widget_areas as $widget_area ) {
 					$index = $widget_area['id'];
 					
@@ -408,144 +426,72 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 		}
 
 		/**
+		 * Get Sidebar Instance Query
+		 *
+		 * Returns a new WP_Query object containing
+		 * posts from the 'sidebar_instance' post
+		 * type.
+		 * 
+		 * @param 	string $index - The original widget area/dynamic sidebar index
+		 *
+		 * @since  1.0.4
+		 * @version 1.0.4
+		 * 
+		 */
+		public function get_sidebar_replacements_query( $index ) {
+			$params = array(
+				'post_type'      => 'sidebar_instance',
+				'meta_key'       => 'sidebar_replacement_id',
+				'meta_value'     => $index,
+				'orderby'        => 'title',
+				'order'          => 'DESC',
+				'posts_per_page' => -1,
+			);
+
+			return new WP_Query( $params );
+		}
+
+		/**
 		 * Get the Replacement Custom Sidebar
 		 *
-		 * First this function determines what kind of page/post etc
-		 * that the user is currently on. Once this has been established
-		 * this function attempts to find the best sidebar replacement
+		 * First this function determines what kind 
+		 * of page/post etc that the user is on. 
+		 * Once established, this function attempts 
+		 * to find the best sidebar replacement
 		 * if it exists.
 		 *
-		 * Note: If two different sidebars have the same post/taxonomy
-		 * assigned to it then the latest sidebar will be applied only
-		 * (in alphabetical order). Also this is an expensive function
-		 * to run so please only call when needed.
-		 *
-		 * @link http://codex.wordpress.org/Function_Reference/get_the_ID				get_the_ID()
-		 * @link http://codex.wordpress.org/Function_Reference/wp_get_theme 			wp_get_theme()
-		 * @link http://codex.wordpress.org/Function_Reference/get_page_templates 		get_page_templates()
-		 * @link http://codex.wordpress.org/Function_Reference/WP_Query             	WP_Query()
-		 * @link http://codex.wordpress.org/Function_Reference/have_posts             	have_posts()
-		 * @link http://codex.wordpress.org/Function_Reference/the_post             	the_post()
-		 * @link http://codex.wordpress.org/Function_Reference/get_post_meta          	get_post_meta()
-		 * @link http://codex.wordpress.org/Function_Reference/is_404          			is_404()
-		 * @link http://codex.wordpress.org/Function_Reference/is_home          		is_home()
-		 * @link http://codex.wordpress.org/Function_Reference/is_search          		is_search()
-		 * @link http://codex.wordpress.org/Function_Reference/is_author          		is_author()
-		 * @link http://codex.wordpress.org/Function_Reference/is_date          		is_date()
-		 * @link http://codex.wordpress.org/Function_Reference/is_page          		is_page()
-		 * @link http://codex.wordpress.org/Function_Reference/is_single          		is_single()
-		 * @link http://codex.wordpress.org/Function_Reference/is_tax          			is_tax()
-		 * @link http://codex.wordpress.org/Function_Reference/get_post_type          	get_post_type()
-		 * @link http://codex.wordpress.org/Function_Reference/get_queried_object       get_queried_object()
-		 * @link http://codex.wordpress.org/Function_Reference/wp_reset_postdata		wp_reset_postdata()
+		 * Note: If two different sidebars have the 
+		 * same post/taxonomy assigned to it then 
+		 * the latest sidebar will be applied only
+		 * (in alphabetical order).
 		 * 
 		 * @param 	string $index 			- The original widget area/dynamic sidebar index 
 		 * @return 	string $replacement_id 	- The replacement id if it exists or false if no replacement is found.
 		 *
 		 * @since  1.0
-		 * @version 1.0.3
+		 * @version 1.0.4
 		 * 
 		 */
 		public function get_widget_area_replacement( $index ) {
-
-			// Get the current post, query and database variables
+			
+			/**
+			 * Define variables used throughout
+			 * this function.
+			 */
+			
+			// Global variables.
 			global $post;
 			global $wp_query;
 			global $wpdb;
 
-			/**
-			 * 404 Condition
-			 * 
-			 * The 404 page not found condition needs its own loop
-			 * as there is no post object that is currrently active
-			 * when a 404 is triggered.
-			 * 
-			 */
-			if ( is_404() ) {
-				// Local variables
-				$replacement_id     = '';
-				$replacement_exists = false;
-
-				// Get all sidebar instances that replace the default sidebar passed in the parameter
-				$params = array(
-					'post_type'      => 'sidebar_instance',
-					'meta_key'       => 'sidebar_replacement_id',
-					'meta_value'     => $index,
-					'orderby'        => 'title',
-					'order'          => 'ASC',
-					'posts_per_page' => -1,
-				);
-
-				$query = new WP_Query( $params );
-
-				/**
-				 * Determine the best type of sidebar to fetch for this page
-				 * and attempt to find the best sidebar replacement.
-				 * 
-				 */ 
-				while ( $query->have_posts() ) : $query->the_post();
-					$possible_id         = get_post_meta( get_the_ID(), 'sidebar_id', true );
-					$sidebar_attachments = get_post_meta( get_the_ID(), 'sidebar_attachments', true );
-
-					foreach ( $sidebar_attachments as $attachment ) {		
-						// 404 Condition
-						if ( is_404() ) {
-							if ( '404' == $attachment['menu-item-object'] ) {
-								$replacement_exists = true;
-								$replacement_id     = $possible_id;
-								continue; // exit the loop
-							}
-						}
-					}	
-				endwhile;
-
-				// Reset the post query
-				wp_reset_postdata();
-
-				// Return the replacement if it exists
-				if ( $replacement_exists ) {
-					return $replacement_id;
-				} else {
-					return false;
-				}
-			} // end 404 condition
-
-			/**
-			 * Not 404 and no post object exists
-			 * 
-			 * Bail if no post object exists.
-			 * 
-			 */
-			if ( ! $post ) {
-				return false;
-			}
-
-			/**
-			 * Post Object Condition
-			 * 
-			 * Now that we have determined that a post object exists
-			 * we can attempt to find the replacement id for this
-			 * widget area.
-			 * 
-			 */
-			$post_id            = get_the_ID();
+			// Sidebar replacement variables.
 			$replacement_id     = '';
 			$replacement_exists = false;
-			
-			/**
-			 * Used to determine sidebar overrides for multiple 
-			 * matched conditions. Initialised using a large int 
-			 * value intentionally.
-			 * 
-			 */
 			$sidebar_importance = 9999;
+			$queried_obj        = get_queried_object();
+			$post_id            = get_the_ID();
 
-			/**
-			 * Get Page Template information and store them as 
-			 * local variables to be used later on in this 
-			 * function.
-			 * 
-			 */
+			// Page template information.
 			if ( is_page() ) {
 				$has_page_template  = false;
 				$page_template_name = '';
@@ -560,133 +506,145 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 			}
 
 			/**
-			 * Get all sidebar instances that replace the default 
-			 * widget area index passed in the parameter in name
-			 * order.
+			 * Get all sidebar instances that 
+			 * replace the default widget area 
+			 * index passed in the parameter 
+			 * in name order.
 			 * 
 			 */
-			$params = array(
-				'post_type'      => 'sidebar_instance',
-				'meta_key'       => 'sidebar_replacement_id',
-				'meta_value'     => $index,
-				'orderby'        => 'title',
-				'order'          => 'DESC',
-				'posts_per_page' => -1,
-			);
-
-			$query = new WP_Query( $params );
+			$query = $this->get_sidebar_replacements_query( $index );
 
 			/**
 			 * Loop through each custom sidebar:
 			 * 
-			 * Determine the best type of sidebar to fetch for this page
-			 * and attempt to find the best sidebar replacement.
+			 * Determine the best type of sidebar 
+			 * to fetch for this page and attempt 
+			 * to find the best sidebar replacement.
 			 * 
 			 */
 			while ( $query->have_posts() ) : $query->the_post();
-
-				// Get id and attachments for this sidebar
+				
+				// Get id and attachments for this sidebar.
 				$possible_id         = get_post_meta( get_the_ID(), 'sidebar_id', true );
 				$sidebar_attachments = get_post_meta( get_the_ID(), 'sidebar_attachments', true );
+				$sidebar_attachments = is_array( $sidebar_attachments ) ? $sidebar_attachments : array();
 
-				// Attempt to find replacements
-				foreach ( $sidebar_attachments as $attachment ) {
-
+				// Attempt to find replacements.
+				foreach ( $sidebar_attachments as $a ) {
+					
 					/**
-					 * Template Hierachy Conditional Checks
-					 * (Not including Page Templates)
+					 * 404 Condition
+					 * 
+					 * The 404 page not found 
+					 * condition.
 					 * 
 					 */
-					
-					// Frontpage Condition
-					// -------------------
-					if ( is_home() && isset( $attachment['menu-item-object'] ) ) {
-						if ( ( 'index_page' == $attachment['menu-item-object'] ) && $sidebar_importance > 10 ) {
+					if ( is_404() ) {
+						if ( '404' == $a['menu-item-object'] ) {
 							$replacement_exists = true;
 							$replacement_id     = $possible_id;
-							$sidebar_importance = 10;
-							continue; // exit the loop
-						}
-					}
-
-					// Search Results Condition
-					// ------------------------
-					if ( is_search() && isset( $attachment['menu-item-object'] ) ) {
-						if ( ( 'search_results' == $attachment['menu-item-object'] ) && $sidebar_importance > 10 ) {
-							$replacement_exists = true;
-							$replacement_id     = $possible_id;
-							$sidebar_importance = 10;
-							continue; // exit the loop
-						}
-					}
-
-					// Author Archive Condition
-					// ------------------------
-					if ( is_author() ) {
-						$author = $wp_query->get_queried_object();
-						if ( isset( $attachment['menu-item-type'] ) && isset( $attachment['menu-item-object'] ) ) {
-							
-							if ( ( 'author_archive' == $attachment['menu-item-type'] ) && $sidebar_importance > 10 ) {
-								if ( $author->ID == $attachment['menu-item-object'] ) {
-									$replacement_exists = true;
-									$replacement_id     = $possible_id;
-									$sidebar_importance = 10;
-									continue; // exit the loop							
-								}
-							}
-
-							if ( ( 'author_archive_all' == $attachment['menu-item-object'] ) && $sidebar_importance > 20 ) {
-								$replacement_exists = true;
-								$replacement_id     = $possible_id;
-								$sidebar_importance = 20;
-								continue; // exit the loop
-							}
-						}
-					}
-
-					// Date Archive Condition
-					// ----------------------
-					if ( ( is_date() && isset( $attachment['menu-item-object'] ) ) && $sidebar_importance > 10 ) {
-						if ( 'date_archive' == $attachment['menu-item-object'] ) {
-							$replacement_exists = true;
-							$replacement_id     = $possible_id;
-							$sidebar_importance = 10;
 							continue; // exit the loop
 						}
 					}
 
 					/**
-					 * Page Conditional Checks
-					 * (Including Page Templates)
+					 * Search Results Condition.
+					 * 
+					 * The search results page context
+					 * with/without results.
+					 * 
+					 */
+					if ( is_search() ) {
+						if ( 'search_results' == $a['menu-item-object'] ) {
+							$replacement_exists = true;
+							$replacement_id     = $possible_id;
+							continue; // exit the loop
+						}
+					}
+
+					/**
+					 * Homepage Template Heirarchy 
+					 * Condition.
+					 *
+					 * The front index page of the 
+					 * site.
+					 * 
+					 */
+					if ( is_home() && isset( $a['menu-item-object'] ) && 'index_page' == $a['menu-item-object'] && $sidebar_importance > 10 ) {
+						$replacement_exists = true;
+						$replacement_id     = $possible_id;
+						$sidebar_importance = 10;
+						continue; // exit the loop
+					}
+
+					/**
+					 * Author Archive Condition
+					 *
+					 * Specific/all author archive pages
+					 * with/without posts.
+					 *
+					 * @todo FIX: The specific author archive conditions
+					 * 
+					 */
+					if ( is_author() && isset( $a['menu-item-type'] ) && isset( $a['menu-item-object'] ) ) {
+						
+						// Specific author archive.
+						if ( 'author_archive' == $a['menu-item-type'] && $queried_obj->ID == $a['menu-item-object-id'] && $sidebar_importance > 10 ) {
+							$replacement_exists = true; 
+							$replacement_id     = $possible_id;
+							$sidebar_importance = 10;
+							continue; // exit the loop	
+						}
+
+						// All author archives.
+						if ( 'author_archive_all' == $a['menu-item-object'] && $sidebar_importance > 20 ) {
+							$replacement_exists = true;
+							$replacement_id     = $possible_id;
+							$sidebar_importance = 20;
+							continue; // exit the loop
+						}
+					}
+
+					/**
+					 * Date Archive Condition
+					 *
+					 * Date taxonomy archive page.
+					 * 
+					 */
+					if ( is_date() && isset( $a['menu-item-object'] ) && 'date_archive' == $a['menu-item-object'] && $sidebar_importance > 10 ) {
+						$replacement_exists = true;
+						$replacement_id     = $possible_id;
+						$sidebar_importance = 10;
+						continue; // exit the loop
+					}
+
+					/**
+					 * Page Condition
+					 *
+					 * - For specific pages.
+					 * - For page templates.
+					 * - All pages. 733
 					 * 
 					 */
 					if ( ! is_home() && is_page() ) {
 
-						// Specific Page Condition
-						// -----------------------
-						if ( isset( $attachment['menu-item-object-id'] ) ) { 
-							if ( ( $post_id == $attachment['menu-item-object-id'] ) && $sidebar_importance > 10 ) {
-								$replacement_exists = true;
-								$replacement_id     = $possible_id;
-								$sidebar_importance = 10;
-								continue; // exit the loop							
-							}
+						// Specific page condition.
+						if ( isset( $a['menu-item-object-id'] ) && $queried_obj->ID == $a['menu-item-object-id'] && $sidebar_importance > 10 ) {
+							$replacement_exists = true;
+							$replacement_id     = $possible_id;
+							$sidebar_importance = 10;
+							continue; // exit the loop
 						}
 
-						// Page Template Condition
-						// -----------------------
-						if ( 
-							isset( $attachment['menu-item-title'] )  && 
-							isset( $attachment['menu-item-object'] ) && 
-							isset( $attachment['menu-item-type'] ) ) {
-
-							// Get page templates
+						// Page template condition.
+						if ( isset( $a['menu-item-title'] ) && isset( $a['menu-item-object'] ) && isset( $a['menu-item-type'] ) ) {
 							if ( $has_page_template && $sidebar_importance > 20 ) {
-								if ( 'page-template' == $attachment['menu-item-object'] && 'template_hierarchy' == $attachment['menu-item-type'] ) {
+								if ( 'page-template' == $a['menu-item-object'] && 'template_hierarchy' == $a['menu-item-type'] ) {
 									
-									// strpos() is used in order to cater for plugin translations
-									$pos = strpos( $attachment['menu-item-title'], $page_template_name );
-									
+									// strpos() is used in order to cater 
+									// for plugin translations.
+									$pos = strpos( $a['menu-item-title'], $page_template_name );
+
 									if ( $pos !== false ) {
 										$replacement_exists = true;
 										$replacement_id     = $possible_id;
@@ -694,84 +652,71 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 										continue; // exit the loop	
 									}
 								}
-							}						
+							}
 						}
 
-						// All Pages Condition
-						// -------------------
-						if ( 
-							isset( $attachment['menu-item-type'] )   && 
-							isset( $attachment['menu-item-object'] ) &&
-							$sidebar_importance > 30 ) {
-
-							if ( 'post_type_all' == $attachment['menu-item-type'] && 'page' == $attachment['menu-item-object'] ) {
+						// All pages condition.
+						if ( isset( $a['menu-item-type'] ) && isset( $a['menu-item-object'] ) && $sidebar_importance > 30 ) {
+							if ( 'post_type_all' == $a['menu-item-type'] && 'page' == $a['menu-item-object'] ) {
 								$replacement_exists = true;
 								$replacement_id     = $possible_id;
 								$sidebar_importance = 30;
-								continue; // exit the loop								
+								continue; // exit the loop
 							}
 						}
-					} // endif
+					}
 
 					/**
-					 * Post Type Conditional Checks
-					 * (Including All Post Types Condition)
+					 * Single Post Type Condition
+					 *
+					 * - Single post.
+					 * - All posts in category.
+					 * - Post format posts.
+					 * - All posttype posts.
 					 * 
 					 */
 					if ( is_single() ) {
+						$post_type = $queried_obj->post_type;
 
-						// Get the current post type
-						$current_post_type = get_post_type( $post_id );	
-
-						// Specific Single Post Type Condition
-						// -----------------------------------
-						if ( 
-							isset( $attachment['menu-item-object-id'] ) &&
-							isset( $attachment['menu-item-object'] )    &&
-							isset( $attachment['menu-item-type'] )      &&
-							$sidebar_importance > 10 ) { 
-
-							if (
-								$attachment['menu-item-object-id'] == $post_id        &&
-								$attachment['menu-item-object'] == $current_post_type &&
-								'post_type' == $attachment['menu-item-type'] ) {
-									$replacement_exists = true;
-									$replacement_id     = $possible_id;
-									$sidebar_importance = 10;
-									continue; // exit the loop			
+						// Single post.
+						if ( isset( $a['menu-item-object-id'] ) && isset( $a['menu-item-object'] ) && isset( $a['menu-item-type'] ) && $sidebar_importance > 10 ) {
+							if ( $a['menu-item-object-id'] == $queried_obj->ID && $a['menu-item-object'] == $post_type && 'post_type' == $a['menu-item-type'] ) {
+								$replacement_exists = true;
+								$replacement_id     = $possible_id;
+								$sidebar_importance = 10;
+								continue; // exit the loop
 							}
 						}
 
-						// All Posts in Category Condition
-						// -------------------------------
-						if ( 
-							isset( $attachment['menu-item-object-id'] ) &&
-							isset( $attachment['menu-item-object'] )    &&
-							isset( $attachment['menu-item-type'] )      &&
+						// All posts in category.
+						if (
+							isset( $a['menu-item-object-id'] ) &&
+							isset( $a['menu-item-object'] )    &&
+							isset( $a['menu-item-type'] )      &&
 							$sidebar_importance > 15 ) {
 
 							if ( 
-								'post' == get_post_type( $post_id ) &&
-								has_category( $attachment['menu-item-object-id'], $post_id ) &&
-								'category_posts' == $attachment['menu-item-type'] ) {
+								'post' == $post_type &&  
+								has_category( $a['menu-item-object-id'], $queried_obj->ID ) &&
+								'category_posts' == $a['menu-item-type'] ) {
 									$replacement_exists = true;
 									$replacement_id     = $possible_id;
 									$sidebar_importance = 15;
-									continue; // exit the loop								
+									continue; // exit the loop
 							}
-						}					
+						}
 
-						// Post Format Condition
-						// ---------------------
-						if ( get_post_format( $post_id ) ) {
+						// Post format posts.
+						if ( get_post_format( $queried_obj->ID ) ) {
 							if ( 
-								isset( $attachment['menu-item-type'] )   && 
-								isset( $attachment['menu-item-object'] ) &&
+								isset( $a['menu-item-type'] )   && 
+								isset( $a['menu-item-object'] ) &&
 								$sidebar_importance > 20 ) {
 
-								if ( 'taxonomy' == $attachment['menu-item-type']      && 
-									 'post_format' == $attachment['menu-item-object'] &&
-									  get_post_format( $post_id ) == strtolower( $attachment['menu-item-title'] ) ) {
+								if ( 'taxonomy' == $a['menu-item-type']      && 
+									 'post_format' == $a['menu-item-object'] &&
+									  get_post_format( $queried_obj->ID ) == strtolower( $a['menu-item-title'] ) ) {
+									
 									$replacement_exists = true;
 									$replacement_id     = $possible_id;
 									$sidebar_importance = 20;
@@ -780,65 +725,60 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 							}
 						}
 
-						// All Post Types Condition
-						// ------------------------
+						// All posttype posts.
 						if ( 
-							isset( $attachment['menu-item-type'] )   && 
-							isset( $attachment['menu-item-object'] ) &&
+							isset( $a['menu-item-type'] )   && 
+							isset( $a['menu-item-object'] ) &&
 							$sidebar_importance > 30 ) {
 
-							if ( 'post_type_all' == $attachment['menu-item-type'] && $current_post_type == $attachment['menu-item-object'] ) {
+							if ( 'post_type_all' == $a['menu-item-type'] && $post_type == $a['menu-item-object'] ) {
 								$replacement_exists = true;
 								$replacement_id     = $possible_id;
 								$sidebar_importance = 30;
 								continue; // exit the loop								
 							}
 						}
-					} // endif is_single()
+					}
 
 					/**
-					 * Taxonomy Conditional Checks
-					 * (Including All Taxonomies Condition)
+					 * Taxonomy Condition
+					 *
+					 * - Specific taxonomy term.
+					 * - All taxonomy terms.
 					 * 
 					 */
 					if ( is_tax() || is_category() || is_tag() ) {
-
-						$queried_obj = get_queried_object();
 						$tax_term_id = get_queried_object_id();
 						$tax_name    = $queried_obj->taxonomy;
 
-						// Specific Taxonomy Term Condition
-						// --------------------------------
+						// Specific taxonomy term.
 						if ( 
-							isset( $attachment['menu-item-object-id'] ) &&
-							isset( $attachment['menu-item-object'] )    &&
-							isset( $attachment['menu-item-type'] )      &&
+							isset( $a['menu-item-object-id'] ) &&
+							isset( $a['menu-item-object'] )    &&
+							isset( $a['menu-item-type'] )      &&
 							$sidebar_importance > 10 ) {
 
 							if (
-								'taxonomy' == $attachment['menu-item-type']        &&
-								$tax_term_id == $attachment['menu-item-object-id'] &&
-								$tax_name == $attachment['menu-item-object'] ) {
+								'taxonomy' == $a['menu-item-type']        &&
+								$tax_term_id == $a['menu-item-object-id'] &&
+								$tax_name == $a['menu-item-object'] ) {
 								
-
 								$replacement_exists = true;
 								$replacement_id     = $possible_id;
 								$sidebar_importance = 10;
-								continue; // exit the loop	
-
+								continue; // exit the loop
 							}
 						}
 
-						// All Taxonomy Terms Condition
-						// ----------------------------
+						// All taxonomy terms.
 						if ( 
-							isset( $attachment['menu-item-object'] )    &&
-							isset( $attachment['menu-item-type'] )      &&
+							isset( $a['menu-item-object'] ) &&
+							isset( $a['menu-item-type'] )   &&
 							$sidebar_importance > 20 ) {
 
 							if (
-								'taxonomy_all' == $attachment['menu-item-type']    &&
-								$tax_name == $attachment['menu-item-object'] ) {
+								'taxonomy_all' == $a['menu-item-type']    &&
+								$tax_name == $a['menu-item-object'] ) {
 								
 								$replacement_exists = true;
 								$replacement_id     = $possible_id;
@@ -846,29 +786,23 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 								continue; // exit the loop	
 							}
 						}
-					} // endif is_tax()
+					}
 
 					/**
-					 * Post Type Archive Condition
-					 * (Everything Except Post)
+					 * Post Type Archive 
+					 *
+					 * - Specific archive page (excluding posts).
 					 * 
-					 */	
-					if ( is_archive()   && 
-						! is_category() && 
-						! is_tax()      &&
-						! is_tag() ) {
-						
-						// Get the current post type
-						$current_post_type = get_post_type( $post_id );	
+					 */
+					if ( is_archive() && ! is_category() && ! is_tax() && ! is_tag() ) {
+						$post_type = $queried_obj->post_type;
 
 						if ( 
-							isset( $attachment['menu-item-type'] )   && 
-							isset( $attachment['menu-item-object'] ) &&
+							isset( $a['menu-item-type'] )   && 
+							isset( $a['menu-item-object'] ) &&
 							$sidebar_importance > 40 ) {
 
-							if ( 'post_type_archive' == $attachment['menu-item-type'] && 
-								$current_post_type == $attachment['menu-item-object'] ) {
-
+							if ( 'post_type_archive' == $a['menu-item-type'] && $post_type == $a['menu-item-object'] ) {
 								$replacement_exists = true;
 								$replacement_id     = $possible_id;
 								$sidebar_importance = 40;
@@ -876,20 +810,19 @@ if ( ! class_exists( 'ECS_Frontend' ) ) :
 							}
 						}
 					}
-
-				} // end foreach loop
-
+				}
 			endwhile;
 
 			// Reset the post query
 			wp_reset_postdata();
 
-			// Return the replacement if it exists
+			// Return the replacement if it exists.
 			if ( $replacement_exists ) {
 				return $replacement_id;
 			} else {
 				return false;
 			}
 		}
+
 	}
 endif;
