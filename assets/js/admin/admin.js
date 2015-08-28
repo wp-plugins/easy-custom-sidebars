@@ -11,7 +11,7 @@
  * @author      Sunny Johal - Titanium Themes <support@titaniumthemes.com>
  * @license     GPL-2.0+
  * @copyright   Copyright (c) 2015, Titanium Themes
- * @version     1.0.4
+ * @version     1.0.5
  *
  * Licensed under the Apache License, Version 2.0 
  * (the "License") you may not use this file except in 
@@ -58,7 +58,7 @@
 		 * Called upon plugin initialisation in order to set
 		 * up the behaviour for the admin options screen.
 		 *
-		 * @version 1.0.4
+		 * @version 1.0.5
 		 * 
 		 */
 		api.init = function() {
@@ -91,7 +91,7 @@
 		 * Creates event listeners and attaches them to the
 		 * tab panel in order to add interactivity.
 		 *
-		 * @version 1.0.4
+		 * @version 1.0.5
 		 * 
 		 */
 		api.attachTabsPanelListeners = function( panelId ) {
@@ -144,7 +144,7 @@
 		 * pages/posts/taxonomies etc that are available
 		 * for sidebar replacements.
 		 * 
-		 * @version 1.0.4
+		 * @version 1.0.5
 		 * 
 		 */
 		api.initAccordion = function() {
@@ -162,7 +162,7 @@
 		 * through a large list in a taxonomy without 
 		 * refreshing the page. This is a recursive function.
 		 * 
-		 * @version 1.0.4
+		 * @version 1.0.5
 		 * 
 		 */
 		api.initPagination = function( panelLink ) {
@@ -219,7 +219,7 @@
 		 *     for persistent storage of the users preference.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.4
+		 * @version 1.0.5
 		 * 
 		 */
 		api.initToggles = function() {
@@ -258,7 +258,7 @@
 		 * in a global context upon plugin initialisation.
 		 *
 		 * @since 1.0.1
-		 * @version 1.0.4
+		 * @version 1.0.5
 		 * 
 		 */
 		api.jQueryExtensions = function() {
@@ -418,7 +418,7 @@
 		 * Provides a cross browser compatible way to
 		 * set placeholder text for input fields.
 		 *
-		 * @version 1.0.4
+		 * @version 1.0.5
 		 * 
 		 */
 		api.setupInputWithDefaultTitle = function() {
@@ -464,7 +464,7 @@
 		 * the quick search functionality in the tab panel
 		 * located in the accordion.
 		 *
-		 * @version 1.0.4
+		 * @version 1.0.5
 		 * 
 		 */
 		api.attachQuickSearchListeners = function( selector ) {
@@ -501,7 +501,7 @@
 		 * @param  {string} input - User search query
 		 * @return {[type]}       [description]
 		 *
-		 * @version 1.0.4
+		 * @version 1.0.5
 		 * 
 		 */
 		api.updateQuickSearchResults = function( input ) {
@@ -542,7 +542,7 @@
 		 * @param jQuery panel The tabs panel we're searching in.
 		 * @todo Add in Localisation L10n and update menu references
 		 *
-		 * @version 1.0.4
+		 * @version 1.0.5
 		 * 
 		 */
 		api.processQuickSearchQueryResponse = function(resp, req, panel) {
@@ -593,7 +593,7 @@
 		 * in order to allow the user to order their sidebar replacements.
 		 * Mimics the native nav menu functionality in WordPress.
 		 * 
-		 * @version 1.0.4
+		 * @version 1.0.5
 		 * 
 		 */
 		api.initSortables = function() {
@@ -816,7 +816,7 @@
 		 * @param  {Function}   processMethod - Function to execute during request
 		 * @param  {Function}   callback      - Function to execute after successful AJAX reequest.
 		 *
-		 * @version 1.0.4
+		 * @version 1.0.5
 		 * 
 		 */
 		api.deleteAllSidebars = function( processMethod, callback ) {
@@ -849,7 +849,7 @@
 		 * @param  {Function}   processMethod [description]
 		 * @param  {Function} callback      [description]
 		 *
-		 * @version 1.0.4
+		 * @version 1.0.5
 		 * 
 		 */
 		api.createNewSidebar = function( sidebarName, processMethod, callback ) {
@@ -946,7 +946,7 @@
 		 * Registers all of the js events for the 'Edit Sidebars' 
 		 * Screen.
 		 * 
-		 * @version 1.0.4
+		 * @version 1.0.5
 		 * 
 		 */
 		api.registerEditEvents = function() {
@@ -1052,7 +1052,7 @@
 		 * Registers all of the js events for the 'Manage Sidebar
 		 * Replacements' Screen.
 		 * 
-		 * @version 1.0.4
+		 * @version 1.0.5
 		 * 
 		 */
 		api.registerManagementEvents = function() {
